@@ -762,8 +762,9 @@ build_single_target() {
     _CMAKE_GLOBAL="${_CMAKE_GLOBAL} -DCMAKE_OSX_DEPLOYMENT_TARGET=${macminver}"
     _CFLAGS_GLOBAL="${_CFLAGS_GLOBAL} -mmacosx-version-min=${macminver}"
     _CXXFLAGS_GLOBAL="${_CXXFLAGS_GLOBAL} -mmacosx-version-min=${macminver}"
-    _OSVER="$(printf '%s00' \
-      "$(printf '%s' "${macminver}" | tr -d '.')" | cut -c -4)"
+    _OSVER="$(printf '%02d%02d' \
+      "$(printf '%s' "${macminver}" | cut -d '.' -f 1)" \
+      "$(printf '%s' "${macminver}" | cut -d '.' -f 2)")"
   elif [ "${_OS}" = 'linux' ]; then
     if [ "${_HOSTOS}" != "${_OS}" ]; then
       _CMAKE_GLOBAL="-DCMAKE_SYSTEM_NAME=Linux ${_CMAKE_GLOBAL}"

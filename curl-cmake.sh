@@ -101,7 +101,7 @@ _VER="$1"
     [ "${_BRANCH#*noftp*}" != "${_BRANCH}" ] && options="${options} -DCURL_DISABLE_FTP=ON"
     if [ "${_OS}" = 'win' ]; then
       LIBS="${LIBS} -lwldap32"
-    elif [ "${_OS}" != 'mac' ]; then  # On macOS we use the built-in LDAP lib
+    elif [ "${_OS}" != 'mac' ] || [ "${_OSVER}" -lt '1010' ]; then  # On macOS we use the built-in LDAP lib
       options="${options} -DCURL_DISABLE_LDAP=ON -DCURL_DISABLE_LDAPS=ON"
     fi
   fi

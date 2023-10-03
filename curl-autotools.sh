@@ -106,7 +106,7 @@ _VER="$1"
       options="${options} --enable-imap --enable-pop3 --enable-smtp"
       if [ "${_OS}" = 'win' ]; then
         options="${options} --enable-ldap --enable-ldaps --with-ldap-lib=wldap32"
-      elif [ "${_OS}" != 'mac' ]; then  # On macOS we use the built-in LDAP lib
+      elif [ "${_OS}" != 'mac' ] || [ "${_OSVER}" -lt '1010' ]; then  # On macOS we use the built-in LDAP lib
         options="${options} --disable-ldap --disable-ldaps"
       fi
     fi
