@@ -18,7 +18,7 @@ SPDX-License-Identifier: CC-BY-SA-4.0
 - Standalone `curl` tool and `libcurl` DLL. Static libraries included.
 - Required: Windows Vista and
   [Universal CRT](https://devblogs.microsoft.com/cppblog/introducing-the-universal-crt/),
-  macOS 10.8 Mountain Lion 64-bit or Apple Silicon,
+  macOS High Sierra 64-bit or Apple Silicon,
   any Linux arm64 with the [MUSL](https://en.wikipedia.org/wiki/Musl) builds.
 - [HTTP/3](https://en.wikipedia.org/wiki/HTTP/3),
   [HTTP/2](https://en.wikipedia.org/wiki/HTTP/2) support,

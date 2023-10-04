@@ -754,11 +754,11 @@ build_single_target() {
     if [ "${_HOSTOS}" != "${_OS}" ]; then
       _CMAKE_GLOBAL="-DCMAKE_SYSTEM_NAME=Darwin ${_CMAKE_GLOBAL}"
     fi
-    # macOS 10.8 Mountain Lion 2012-07-25. Seems to work for arm64 builds,
+    # macOS 10.9 Mavericks 2013-10-22. Seems to work for arm64 builds,
     # though arm64 was released in macOS 11.0 Big Sur 2020-11-12.
     # Bump to macOS 10.13 High Sierra 2017-09-25 if we decide to disable
     # LDAP/LDAPS for macOS builds.
-    macminver='10.8'
+    macminver='10.9'
     _CMAKE_GLOBAL="${_CMAKE_GLOBAL} -DCMAKE_OSX_DEPLOYMENT_TARGET=${macminver}"
     _CFLAGS_GLOBAL="${_CFLAGS_GLOBAL} -mmacosx-version-min=${macminver}"
     _CXXFLAGS_GLOBAL="${_CXXFLAGS_GLOBAL} -mmacosx-version-min=${macminver}"
